@@ -6,10 +6,13 @@ require('shelljs/global');
 //}
 //
 //exec('git stash');
-var commitDate = new Date().toString();
+var commitDate = new Date().toString().replace(/\s/g,'_').replace(/\W/g, '');
 //cp('-f', 'lib/staticSite.html', 'build/public/index.html');
 //exec('git branch gh-pages');
 //exec('git checkout gh-pages');
-cp('-rf', 'build/public/*', pwd());
+console.log(cp)
+
+cp('-rf', './build/public/*', pwd());
 exec('git add .');
-exec('git commit -m "Automated commit on' + commitDate);
+console.log(commitDate)
+exec('git commit -m "Automated commit on' + commitDate+ '"');
