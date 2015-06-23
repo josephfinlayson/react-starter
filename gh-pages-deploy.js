@@ -5,7 +5,7 @@ if (!which('git')) {
     exit(1);
 }
 
-exec('git stash')
+exec('git stash');
 var commitDate = new Date().toString();
 cp('lib/staticSite.html', 'build/public/index.html');
 exec('git branch gh-pages');
